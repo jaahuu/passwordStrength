@@ -21,15 +21,23 @@
     document.getElementById("button").addEventListener("click", check);
     function check () {
         var liczba = document.getElementById("pole").value;
+        var q = 1;
+        var w = 2;
+        var e = 3;
+        var r = 4;
+        var t = 5;
+        var y = 6;
+        var u = 7;
+        var i = 8;
+        var o = 9;
+        var p = 0;
 
-        if (liczba.length==0) {
-            document.getElementById("result").innerHTML="Wpisz hasło matole";
-
-        }
-        else if(liczba.length>=7){
+        /*if (liczba.length==0) {
+            document.getElementById("result").innerHTML="Wpisz hasło matole";*/
+        if((liczba.length>7) && liczba.indexOf(q || w || e || r || t || y || u || i || o || p)) {
             document.getElementById("result").innerHTML="Dojebane mordo";
         }
-        else if((liczba.length <7) && (liczba.length>=4)){
+        else if((liczba.length <=7) && (liczba.length>=4) && liczba.indexOf(q || w || e || r || t || y || u || i || o || p)){
             document.getElementById("result").innerHTML="Średniawka";
         }
         else document.getElementById("result").innerHTML="Chujowe";
