@@ -9,7 +9,7 @@
 <div id="strona">
     <h1>Moc Hasła</h1>
     <form id="form">
-        PodajHasło	<input type="password" id="pole">
+        PodajHasło <input type="password" id="pole">
     </form>
     <input type="submit" id="button" value="Sprawdź moc hasła">
 
@@ -19,8 +19,10 @@
 </div>
 <script>
     document.getElementById("button").addEventListener("click", check);
-    function check () {
+
+    function check() {
         var liczba = document.getElementById("pole").value;
+        /* probowalem zrobić && indexOf(q || w || e || r ||) etc ale nie pykło do zastanowenia dlaczego?
         var q = 1;
         var w = 2;
         var e = 3;
@@ -31,18 +33,18 @@
         var i = 8;
         var o = 9;
         var p = 0;
+        (q || w || e || r || t || y || u || i || o || p)) */
+        var reg1 = /\d/;
 
-        /*if (liczba.length==0) {
-            document.getElementById("result").innerHTML="Wpisz hasło matole";*/
-        if((liczba.length>7) && liczba.indexOf(q || w || e || r || t || y || u || i || o || p)) {
-            document.getElementById("result").innerHTML="Dojebane mordo";
-        }
-        else if((liczba.length <=7) && (liczba.length>=4) && liczba.indexOf(q || w || e || r || t || y || u || i || o || p)){
-            document.getElementById("result").innerHTML="Średniawka";
-        }
-        else document.getElementById("result").innerHTML="Chujowe";
+        if (liczba.length == 0) {
+            document.getElementById("result").innerHTML = "Wpisz hasło byku";
+        } else if ((liczba.length >= 7) && (reg1.test(liczba))) {
+            document.getElementById("result").innerHTML = "Dojebane mordo";
+        } else if ((liczba.length < 7) && (liczba.length >= 4) && (reg1.test(liczba))) {
+            document.getElementById("result").innerHTML = "Średniawka";
+        } else document.getElementById("result").innerHTML = "Chujowe";
     }
-    </script>
+</script>
 
 </body>
 </html>
