@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moc Hasła</title>
+    <link rel="stylesheet" href="haslo.css">
+</head>
+<body>
+<div id="strona">
+    <h1>Moc Hasła</h1>
+    <form id="form">
+        PodajHasło	<input type="password" id="pole">
+    </form>
+    <input type="submit" id="button" value="Sprawdź moc hasła">
+
+    <div id="result">
+    </div>
+
+</div>
+<script>
+    document.getElementById("button").addEventListener("click", check);
+    function check () {
+        var liczba = document.getElementById("pole").value;
+
+        if (liczba.length==0) {
+            document.getElementById("result").innerHTML="Wpisz hasło matole";
+
+        }
+        else if(liczba.length>=7){
+            document.getElementById("result").innerHTML="Dojebane mordo";
+        }
+        else if((liczba.length <7) && (liczba.length>=4)){
+            document.getElementById("result").innerHTML="Średniawka";
+        }
+        else document.getElementById("result").innerHTML="Chujowe";
+    }
+    </script>
+
+</body>
+</html>
